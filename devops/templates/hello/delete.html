@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    {% extends "./base.html" %}
+</head>
+<body>
+     {% block content %}
+<h3>确定要删除以下用户吗？</h3>
+<table border="1">
+<thead>
+    <tr>
+        <th>ID</th>
+        <th>姓名</th>
+        <th>密码</th>
+        <th>性别</th>
+    </tr>
+</thead>
+<tbody>
+    {% for u in user %}
+    <tr>
+        <td>{{ u.id }}</td>
+        <td>{{ u.name }}</td>
+        <td>{{ u.password }}</td>
+        <td>{{ u.sex }}</td>
+    </tr>
+    {% endfor %}
+</tbody>
+</table>
+<a href="javascript:history.go(-1)" >返回</a> <a href="deleaction" >确定</a>
+{% endblock %}
+</body>
+</html>
+
+<!--<table border="1">-->
+<!--    <thead>-->
+<!--        <tr>-->
+<!--            <th>id</th>-->
+<!--            <th>姓名</th>-->
+<!--            <th>密码</th>-->
+<!--            <th>性别</th>-->
+<!--            <th>管理</th>-->
+<!--    </thead>-->
+<!--<tbody>-->
+<!--    {% for user in users %}-->
+<!--    <tr>-->
+<!--        <td>{{ user.id }}</td>-->
+<!--        <td>{{ user.name }}</td>-->
+<!--        <td>{{ user.password }}</td>-->
+<!--        <td>{{ user.sex }}</td>-->
+<!--        <td><a href="{{ user.id }}/mod">编辑</a>  <a href="{{ user.id }}/delete">删除</a> </td>-->
+<!--    </tr>-->
+<!--    {% endfor %}-->
